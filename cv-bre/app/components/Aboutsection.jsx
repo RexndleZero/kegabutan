@@ -8,7 +8,7 @@ const TAB_DATA = [
     title: "skills",
     id: "skills",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>JavaScript</li>
         <li>Golang</li>
         <li>Next JS</li>
@@ -23,7 +23,7 @@ const TAB_DATA = [
     title: "education",
     id: "education",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>Fullstack JS</li>
         <li>University of OXFORD</li>
       </ul>
@@ -33,7 +33,7 @@ const TAB_DATA = [
     title: "certifications",
     id: "certifications",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li> Oracle Academy </li>
       </ul>
     ),
@@ -42,7 +42,7 @@ const TAB_DATA = [
     title: "experience",
     id: "experience",
     content: (
-      <ul>
+      <ul className="list-disc pl-2">
         <li>Clash of Champions Indonesian Winner</li>
       </ul>
     ),
