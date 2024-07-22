@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 import Projectcard from "./Projectcard";
 import ProjectTag from "./ProjectTag";
@@ -8,8 +9,8 @@ const projectsData = [
     id: 1,
     title: "Step-by-Step membuat aplikasi berbasis web ruteangkot",
     description: "Project pertama di kuliahan",
-    image: "",
-    tag: ["All", "Web"],
+    image: "/images/image.png",
+    tag: ["All", "Web", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -31,7 +32,7 @@ const Projectsections = () => {
     setTag(newTag);
   };
 
-  const filteredProjects = projectsData.filter((project) => 
+  const filteredProjects = projectsData.filter((project) =>
     project.tag.includes(tag)
   );
 
