@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Projectcard from "./Projectcard";
+import ProjectTag from "./ProjectTag";
 
 const projectsData = [
   {
@@ -23,21 +25,40 @@ const projectsData = [
 ];
 
 const Projectsections = () => {
+  const [tag, setTag] = useState("All");
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) => 
+    project.tag.includes(tag)
+  );
+
   return (
     <>
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12 ">
         My Projects
       </h2>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6 ">
-        <button className="rounded-full  border-2 border-blue-700 px-6 py-3 text-xl cursor-pointer">
-          All
-        </button>
-        <button className="rounded-full  border-2 border-slate-700 hover:border-white px-6 py-3 text-xl cursor-pointer">
-          Web
-        </button>
+        <ProjectTag
+          onClick={handleTagChange}
+          name="All"
+          isSelected={tag === "All"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Web"
+          isSelected={tag === "Web"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Mobile"
+          isSelected={tag === "Mobile"}
+        />
       </div>
       <div>
-        {projectsData.map((project) => (
+        {filteredProjects.map((project) => (
           <Projectcard
             key={project.id}
             title={project.title}
